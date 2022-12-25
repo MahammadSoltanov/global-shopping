@@ -44,9 +44,10 @@
     cursor: pointer;
     border: 1px solid #6D8816;
     background-color: #D9CAB3;
+    color: #212121;
     box-sizing: border-box;
     transition: background 0.5s ease-in-out;
-    transition: color 0.2s ease-in-out;    
+    transition: color 0.5s ease-in-out;    
 }
 
 .h-log-out:hover{
@@ -64,4 +65,8 @@
 
 .h-profile:hover{
     transform: scale(1.1);
+}
+
+a{
+    text-decoration: none;
 }

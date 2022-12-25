@@ -1,16 +1,22 @@
 import React from 'react';
 import MainPage from './pages/MainPage';
 import './App.css';
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import LogInPage from './pages/LogInPage';
+import Shop from './components/Shop/Shop';
+import Card from './components/Card/Card';
+import UserProfile from './pages/UserProfile';
 
 function App() {
   return (    
     <div className="App">         
       <Routes>
-        <Route path="/" element={<MainPage/>}></Route>
+        <Route exact path="/" element={<MainPage/>}>
+          <Route path="/" element={<Shop />}></Route>
+          <Route path="/card" element={<Card />}></Route>
+        </Route>
         <Route path="/login" element={<LogInPage/>}></Route>
+        <Route path="/userprofile" element={<UserProfile/>}></Route>
       </Routes>
     </div>
   );

@@ -1,0 +1,4 @@
+#212121 - black
+#6D9886 - green
+#D9CAB3 - gold
+#F6F6F6 - white

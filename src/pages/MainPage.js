@@ -12,9 +12,8 @@ export default class MainPage extends Component {
             <div>
                 <Header />
                 <Routes>
-                    
-                    <Route path="/" element={<Shop/>}></Route>
-                    <Route path="/card" element={<Card/>}></Route>
+                    <Route path="/" element={<Shop />}></Route>
+                    <Route path="/card" element={<Card />}></Route>
                 </Routes>
             </div>
         )
