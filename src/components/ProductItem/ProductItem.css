@@ -5,8 +5,10 @@
     max-height: 400px;
     padding: 1%;
     box-sizing: border-box;
-    position: relative;
+    position: relative;    
 }
+
+
 
 .product-image {
     height: 200px;
@@ -38,14 +40,21 @@ a:hover {
     background-color: #6D9886;
     width: 30px;
     height: 30px;
+    padding: 1px;
     position: absolute;
     top: 0;
     right: 0;
+    color: #D9CAB3;
+    transition: transform 0.4s;
+    border: 0px;
 }
 
 .add-button:hover{
     background-color: #D9CAB3;
     cursor: pointer;
+    color: #212121;
+    transform: scale(1.1);
+    
 }
 
 .add-button p {

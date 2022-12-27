@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './ProductsNav.css';
-import changeProductsAction from '../../redux/actions/changeProducts'; 
 
-class ProductsNav extends Component {
+export default class ProductsNav extends Component {
   render() {
     return (
       <div className='products-nav'>
@@ -16,11 +15,12 @@ class ProductsNav extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  changeProductsList: (productCategory) => {
-      console.log("Dispatched CHANGE_PRODUCTS action");
-      dispatch(changeProductsAction(productCategory));
-  }
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   changeProductsList: (productCategory) => {
+//       console.log("Dispatched CHANGE_PRODUCTS action");
+//       searchRequestToApi(productCategory, dispatch);
+//       dispatch(changeProductsAction(productCategory));
+//   }
+// });
 
-export default connect(null, mapDispatchToProps)(ProductsNav);
+// export default connect(null, mapDispatchToProps)(ProductsNav);

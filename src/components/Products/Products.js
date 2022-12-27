@@ -9,7 +9,7 @@ class Products extends Component {
       <div className='products-container'>
         {this.props.products.map((product) => {
           return (
-            <div className='product-item' key={product.product_id + product.title + product.source}>
+            <div className='product-item' key={product.product_id + product.title + product.source + product.position}>
               <ProductItem {...product} />
             </div>)
         }
