@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './SearchBox.css';
 import { connect } from 'react-redux';
-
+import searchRequestToApi from '../../helpers/searchRequestToApi';
 class SearchBox extends Component {
 
     state = {
@@ -14,7 +14,7 @@ class SearchBox extends Component {
 
     handleSearchRequest = (e) => {
         if (e === null || e.key === "Enter") {
-
+            this.props.makeSearchRequest(this.state.searchValue);
         }
     }
 
@@ -30,14 +30,11 @@ class SearchBox extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    console.log("mapStateToProps in SearchBox");
-
-    return {
-    }
-}
-
 const mapDispatchToProps = (dispatch) => ({
+    makeSearchRequest: (searchedText) => {
+        console.log("Dispatched UPDATE_ON_SEARCH_REQUEST action");
+        searchRequestToApi(searchedText, dispatch);
+    }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
+export default connect(null, mapDispatchToProps)(SearchBox);

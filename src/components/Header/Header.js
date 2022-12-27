@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import './Header.css';
+import './Header.css';  
 import imageSrc from './profile-user.png';
 
 export default class Header extends Component {
@@ -8,7 +8,7 @@ export default class Header extends Component {
     return (
       <div className="header">
         <Link to='/'>
-          <div className='h-left'>Shop</div>
+            <div className='h-left'>Shop</div>
         </Link>
         <div className='h-right'>
           <Link to='/card'>
@@ -18,7 +18,7 @@ export default class Header extends Component {
           <Link to='/login'>
             <div className='h-log-out'>Log Out</div>
           </Link>
-          
+
           <Link to='/userprofile'>
             <img title='Profile' src={imageSrc} className='h-profile' alt='profile-user'></img>
           </Link>

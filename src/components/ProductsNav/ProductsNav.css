@@ -1,0 +1,19 @@
+.products-nav{
+    display: flex;
+    column-gap: 50px;
+    justify-content: center;
+    font-size: 3vmin;
+    width: 100%;
+    font-weight: 700;
+}
+
+.products-nav-item:hover{
+    color: #6D9886;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    .products-nav{
+        font-size: 4vmin;
+    }    
+}
