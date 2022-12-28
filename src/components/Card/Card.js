@@ -7,7 +7,10 @@ class Card extends Component {
 
   render() {
     return (
-      <>
+      <div className='card'>
+          <div className='card-money'>
+            <p>Order summary: {(this.props.allMoney).toFixed(3)}$</p>
+          </div>
         <div className='card-item-container'>
           {this.props.productsInCard.map((product) => {
             return (
@@ -16,17 +19,16 @@ class Card extends Component {
               </div>
             )
           })}
-          <div></div>
         </div>
-
-      </>
+      </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    productsInCard: state.productsInCard
+    productsInCard: state.productsInCard,
+    allMoney: state.allMoney
   }
 }
 

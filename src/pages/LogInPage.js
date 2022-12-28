@@ -36,7 +36,7 @@ export default function LogInPage() {
         </label>
 
         <button onClick={signIn} className='sign-in-button'>Sign in</button>
-        <p>By Creating an account you agree to Condions of use and Privacy Notice</p>
+        <p>By Creating an account you agree to Conditons of use and Privacy Notice</p>
         <button className='register-button' onClick={register}>Create account if you doesn't have one</button>
       </div>
     </div>

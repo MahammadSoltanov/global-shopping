@@ -1,38 +1,47 @@
-.card-item-container{
+.carditem-container {
     display: flex;
     flex-direction: column;
 }
 
-.card-item-top{
+.card-item-top {
     display: flex;
     border-bottom: 1px solid #6D9886;
 }
 
-.card-item-bottom{
+.card-item-bottom {
     display: flex;
     box-sizing: border-box;
+    column-gap: 50px;
 }
 
-.card-item-counter{
+.card-item-counter {
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
 
 }
 
-.card-item-info{
+.card-item-info {
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
+    max-width: 300px;
     width: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-.card-item-img{
-    width: 50px;
+.card-item-img {
+    max-width: 100%;
     height: auto;
 }
 
-.card-item-delete{
+.card-item-img-container {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%;
+}
+
+.card-item-delete {
     margin-top: auto;
     margin-bottom: auto;
     background-image: url('trash.png');
@@ -43,25 +52,17 @@
     background-color: transparent;
 }
 
-.card-item-delete:hover{
+.card-item-delete:hover {
     background-image: url('trash\ hover.png');
     cursor: pointer;
 }
 
-.card-item-summ{
+.card-item-summ {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.card-item-minus{
-    border: 0px;
-    background-color: #6D9886;  
-    width: 20px;
-    height: 20px;
-    color: #D9CAB3;
-}
-
-.card-item-plus{
+.card-item-minus {
     border: 0px;
     background-color: #6D9886;
     width: 20px;
@@ -69,17 +70,25 @@
     color: #D9CAB3;
 }
 
-.card-item-plus:hover{
+.card-item-plus {
+    border: 0px;
+    background-color: #6D9886;
+    width: 20px;
+    height: 20px;
+    color: #D9CAB3;
+}
+
+.card-item-plus:hover {
     cursor: pointer;
     background-color: #6D9816;
 }
 
-.card-item-minus:hover{
+.card-item-minus:hover {
     cursor: pointer;
     background-color: #6D9816;
 }
 
-.card-item-counter p{
+.card-item-counter p {
     background-color: #D9CAB3;
     width: 30px;
     text-align: center;
@@ -87,15 +96,14 @@
     height: 20px;
 }
 
-.card-item-bottom-right{
+.card-item-bottom-right {
     display: flex;
-    column-gap: 50px    ;
+    column-gap: 50px;
     row-gap: 10px;
-    margin-left: 30px;
 }
 
-@media screen and (max-width: 500px) {
-    .card-item-bottom-right{
+@media screen and (max-width: 550px) {
+    .card-item-bottom-right {
         flex-direction: column;
     }
 }

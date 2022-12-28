@@ -10,14 +10,16 @@ class CardItem extends Component {
     render() {
         const { thumbnail, source, title, price, rating, link, isAdded, amount, extracted_price, reviews, delivery, product_id, position } = this.props;
         return (
-            <div className='card-item-container'>
+            <div className='carditem-container'>
                 <div className='card-item-top'>
                     Source: {source}
                 </div>
                 <div className='card-item-bottom'>
-                    <img className='card-item-img' src={thumbnail}></img>
+                    <div className='card-item-img-container'>
+                        <img className='card-item-img' src={thumbnail}></img>
+                    </div>
                     <div className='card-item-info'>
-                        <a href={link}>{title}</a>
+                        <a className='card-item-link' href={link}>{title}</a>
                         <p>{rating}★</p>
                         <p>Delivery: {delivery}</p>
                     </div>
@@ -28,7 +30,7 @@ class CardItem extends Component {
                             <button className='card-item-plus' onClick={() => this.props.incrementAmount(product_id + source + title + position)}>+</button>
                         </div>
                         <div className='card-item-summ'>
-                            {extracted_price * amount}$
+                            {(extracted_price * amount).toFixed(3)}$
                         </div>
                         <button className='card-item-delete' onClick={() => this.props.deleteFromCard(product_id + source + title + position)}></button>
                     </div>
