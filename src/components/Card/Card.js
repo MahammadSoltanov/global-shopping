@@ -1,54 +1,33 @@
 import React, { Component } from 'react'
-import DataTable from 'react-data-table-component'
-const columns = [
-  {
-    name: 'Title',
-    selector: row => row.title,
-  },
-  {
-    name: 'Source',
-    selector: row => row.source,
-  },
-  {
-    name: 'Price',
-    selector: row => row.price,
-  },
-  {
-    name: 'Rating',
-    selector: row => row.rating,
-  },
-  {
-    name: 'Reviews',
-    selector: row => row.reviews,
-  },
-  {
-    name: 'Delivery',
-    selector: row => row.delivery,
-  }, 
-];
+import { connect } from 'react-redux'
+import CardItem from '../CardItem/CardItem'
+import './Card.css'
 
-const data = [
-  {
-    id: 1,
-    title: "<button>Delete From List</button>",
-    year: '1988',
-  },
-  {
-    id: 2,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-]
-export default class Card extends Component {
+class Card extends Component {
+
   render() {
     return (
-      <div className='card-container'>
-         <DataTable
-            columns={columns}
-            data={data}
-        />
-      </div>
+      <>
+        <div className='card-item-container'>
+          {this.props.productsInCard.map((product) => {
+            return (
+              <div className='card-item' key={product.product_id + product.title + product.source + product.position}>
+                <CardItem {...product} />
+              </div>
+            )
+          })}
+          <div></div>
+        </div>
+
+      </>
     )
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    productsInCard: state.productsInCard
+  }
+}
+
+export default connect(mapStateToProps)(Card);

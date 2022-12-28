@@ -6,7 +6,7 @@ import "./ProductItem.css";
 
 class ProductItem extends Component {
   render() {
-    const { thumbnail, source, title, price, rating, link, isAdded, reviews, delivery } = this.props;
+    const { thumbnail, source, title, price, rating, link, isAdded, amount, reviews, delivery } = this.props;
     return (
       <>
         <button className='add-button' title='Add to card' disabled={isAdded} onClick={() => this.props.addToCard(this.props)}><p>{isAdded ? "✓" : "+"}</p></button>

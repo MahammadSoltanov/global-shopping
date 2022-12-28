@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Login.css';
 import { Route } from 'react-router'
 import { Routes } from 'react-router'
 
@@ -12,8 +13,9 @@ export default class MainPage extends Component {
             <div>
                 <Header />
                 <Routes>
-                    <Route path="/" element={<Shop />}></Route>
+                    <Route path="/shop" element={<Shop />}></Route>
                     <Route path="/card" element={<Card />}></Route>
+                    <Route path='/' element={<div className='greeting-container'><h1 className='greeting'>Welcome To Global Shopping press on Shop to start</h1></div>}></Route>
                 </Routes>
             </div>
         )

@@ -12,9 +12,9 @@ class SearchBox extends Component {
         this.setState({ searchValue: e.target.value });
     }
 
-    handleSearchRequest = (e) => {
+    handleSearchRequest = (e, productsInCard) => {
         if (e === null || e.key === "Enter") {
-            this.props.makeSearchRequest(this.state.searchValue);
+            this.props.makeSearchRequest(this.state.searchValue, productsInCard);
         }
     }
 
@@ -22,19 +22,25 @@ class SearchBox extends Component {
         return (
             <div className='search-box-container'>
                 <input className='search-input' value={this.state.searchValue}
-                    onKeyUp={(e) => this.handleSearchRequest(e)}
+                    onKeyUp={(e) => this.handleSearchRequest(e, this.props.productsInCard)}
                     onChange={this.handleSearchChange} />
-                <div className='search-button' onClick={() => this.handleSearchRequest(null)}>Search</div>
+                <div className='search-button' onClick={() => this.handleSearchRequest(null, this.props.productsInCard)}>Search</div>
             </div>
         )
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    makeSearchRequest: (searchedText) => {
+    makeSearchRequest: (searchedText, productsInCard) => {
         console.log("Dispatched UPDATE_ON_SEARCH_REQUEST action");
-        searchRequestToApi(searchedText, dispatch);
+        searchRequestToApi(searchedText, dispatch, productsInCard );
     }
 })
 
-export default connect(null, mapDispatchToProps)(SearchBox);
+const mapStateToProps = (state) => {
+    return{
+        productsInCard: state.productsInCard
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
