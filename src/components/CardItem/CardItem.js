@@ -6,6 +6,7 @@ import incrementAmountAction from '../../redux/actions/incrementAmount';
 import updateIsAddedPropertyAction from '../../redux/actions/updateIsAddedProperty';
 import './CardItem.css'
 
+
 class CardItem extends Component {
     render() {
         const { thumbnail, source, title, price, rating, link, isAdded, amount, extracted_price, reviews, delivery, product_id, position } = this.props;
